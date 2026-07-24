@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#F8F9FB;
+    color:#1F2937;
+}
+.btn-primary{
+    background:linear-gradient(90deg,#1E3A8A,#6D28D9);
+    border:none;
+    color:white;
+}
+.btn-primary:hover{
+    background:linear-gradient(90deg,#3B82F6,#EC4899);
+}
+.card-modern{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.card-modern:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(59,130,246,.2);
+}
+.gradient-title{
+    background:linear-gradient(90deg,#1E3A8A,#6D28D9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
