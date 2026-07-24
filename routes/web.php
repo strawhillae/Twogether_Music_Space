@@ -86,6 +86,9 @@ Route::middleware(['auth', 'admin'])
         Route::patch('/profile', [AdminProfileController::class, 'update'])->name('profile.update');
         Route::post('/profile/photo', [AdminProfileController::class, 'updatePhoto'])->name('profile.photo.update');
         Route::delete('/profile/photo', [AdminProfileController::class, 'destroyPhoto'])->name('profile.photo.destroy');
+
+        Route::get('/laporan/export-pdf', [DashboardController::class, 'exportPdf'])
+            ->name('laporan.export');
     });
 
 require __DIR__.'/auth.php';

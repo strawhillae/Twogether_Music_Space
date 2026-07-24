@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Booking;
 use App\Models\Studio;
 
@@ -30,4 +31,17 @@ class DashboardController extends Controller
 
         return view('admin.dashboard', compact('bookings', 'totalBookings', 'pendingCount', 'pendingBookings', 'chartData'));
     }
+
+    public function exportPdf()
+{
+    $bookings = Booking::with(['studio', 'user'])->get();
+    // sesuaikan data apa aja yang mau ditampilin di laporan
+
+    $pdf = Pdf::loadView('admin.laporan.pdf', [
+        'bookings' => $bookings,
+        'tanggal' => now()->format('d-m-Y'),
+    ]);
+
+    return $pdf->download('laporan-dashboard-' . now()->format('Ymd') . '.pdf');
+}
 }

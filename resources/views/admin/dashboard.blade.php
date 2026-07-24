@@ -27,6 +27,10 @@
                     </span>
                 </div>
 
+                <a href="{{ route('admin.laporan.export') }}" class="btn btn-primary">
+    Export Laporan PDF
+</a>
+
                 {{-- Ringkasan angka --}}
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                     <div class="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
