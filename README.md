@@ -5,7 +5,7 @@ Twogether Hub adalah aplikasi web berbasis **Laravel 13** untuk manajemen **peny
 ## ✨ Fitur Utama
 
 - **Autentikasi** — Register, Login, Logout, Reset/Konfirmasi Password (Laravel Breeze)
-- **Login Google (Socialite)** — Package `laravel/socialite` sudah terpasang
+- **Login Google (Socialite)** — Package `laravel/socialite` sudah terpasang (lihat catatan pada bagian *Known Issues*)
 - **Dashboard** berbeda untuk Admin dan User
 - **Manajemen Studio (CRUD)** — tambah, lihat, ubah, hapus data studio beserta foto
 - **Manajemen Fasilitas (CRUD)**
@@ -92,6 +92,7 @@ GOOGLE_CLIENT_SECRET=
 GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
 ```
 
+> Jika menggunakan SQLite, buat dulu file database-nya (biasanya sudah ada di `database/database.sqlite`, jika belum ada jalankan):
 > ```bash
 > touch database/database.sqlite
 > ```
@@ -128,6 +129,7 @@ php artisan serve
 ```
 Aplikasi dapat diakses melalui: `http://127.0.0.1:8000`
 
+Atau jalankan sekaligus server + queue + vite dengan satu perintah:
 ```bash
 composer run dev
 ```
@@ -170,6 +172,10 @@ Contoh body request `POST /api/studios`:
   "deskripsi": "Studio rekaman full peralatan",
   "status": "Tersedia"
 }
+```
+
+File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collection.json` (export koleksi Anda dari Postman lalu simpan di path tersebut agar terdokumentasi bersama repo).
+
 ---
 
 ## 📸 Dokumentasi Screenshot
