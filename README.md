@@ -5,7 +5,6 @@ Twogether Hub adalah aplikasi web berbasis **Laravel 13** untuk manajemen **peny
 ## ✨ Fitur Utama
 
 - **Autentikasi** — Register, Login, Logout, Reset/Konfirmasi Password (Laravel Breeze)
-- **Verifikasi Email** — Scaffolding verifikasi email bawaan Breeze (lihat catatan pada bagian *Known Issues*)
 - **Login Google (Socialite)** — Package `laravel/socialite` sudah terpasang (lihat catatan pada bagian *Known Issues*)
 - **Dashboard** berbeda untuk Admin dan User
 - **Manajemen Studio (CRUD)** — tambah, lihat, ubah, hapus data studio beserta foto
@@ -22,7 +21,7 @@ Twogether Hub adalah aplikasi web berbasis **Laravel 13** untuk manajemen **peny
 | Item | Keterangan |
 |---|---|
 | Nama | Deshinta Putri Adilla |
-| NIM | 240170099 |
+| NIM | *240170099* |
 
 ---
 
@@ -78,7 +77,7 @@ DB_CONNECTION=sqlite
 # DB_USERNAME=root
 # DB_PASSWORD=
 
-# Konfigurasi email (untuk fitur verifikasi email)
+# Konfigurasi email (opsional, hanya jika ingin mengirim notifikasi via email)
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
@@ -92,6 +91,11 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
 ```
+
+> Jika menggunakan SQLite, buat dulu file database-nya (biasanya sudah ada di `database/database.sqlite`, jika belum ada jalankan):
+> ```bash
+> touch database/database.sqlite
+> ```
 
 ### 5. Migrasi & Seeder Database
 ```bash
@@ -109,7 +113,6 @@ php artisan tinker
 ```php
 $user = App\Models\User::first();
 $user->role = 'admin';
-$user->email_verified_at = now();
 $user->save();
 ```
 
@@ -142,10 +145,8 @@ php artisan storage:link
 
 | Role | Email | Password |
 |---|---|---|
-| User | `whitneyatha@gmail.com` | `yoojimin` |
-| Admin | deshintaadilla@gmail.com | leedonghyuck |
-
-> Aplikasi ini belum memiliki seeder khusus untuk akun Admin, sehingga akun Admin perlu dibuat manual seperti pada instruksi instalasi di atas.
+| User | `whitneyatha@gmail.com` | `yoojimn` |
+| Admin | *deshintaadilla@gmail.com* | *leedonghyuck* |
 
 ---
 
@@ -182,60 +183,68 @@ File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collec
 > Daftar di bawah sudah disesuaikan dengan nama file yang ada di `docs/screenshots/`. Jika Anda mengganti/menambah file, sesuaikan juga nama file & urutan di sini agar gambar tetap tampil dengan benar.
 
 ### 1. Landing Page
-`docs/screenshots/01-landing-page.png`
+`docs/screenshots/01-landing-page.png.png`
 
 ![Landing Page](docs/screenshots/01-landing-page.png)
 
 ### 2. Login
-`docs/screenshots/02-login.png`
+`docs/screenshots/02-login.png.png`
 
 ![Login](docs/screenshots/02-login.png)
 
-> ⚠️ **Catatan**: fitur Login Google & verifikasi email wajib belum aktif — lihat bagian [Known Issues](#-known-issues--catatan-pengembangan).
+> ⚠️ **Catatan**: fitur Login Google — lihat bagian [Known Issues](#-known-issues--catatan-pengembangan).
 
 ### 3. Register
-`docs/screenshots/03-register.png`
+`docs/screenshots/03-register.png.png`
 
 ![Register](docs/screenshots/03-register.png)
 
 ### 4. Dashboard
-- Dashboard Admin: `docs/screenshots/04-dashboard-admin.png`
-- Dashboard User: `docs/screenshots/05-dashboard-user.png`
+- Dashboard Admin: `docs/screenshots/04-dashboard-admin.png.png`
+- Dashboard User: `docs/screenshots/05-dashboard-user.png.png`
 
 ![Dashboard Admin](docs/screenshots/04-dashboard-admin.png)
 ![Dashboard User](docs/screenshots/05-dashboard-user.png)
 
 ### 5. CRUD (Booking, Reservasi, Kelola Studio)
-- Booking Studio: `docs/screenshots/06-booking.png`
-- Reservasi & Verifikasi oleh Admin: `docs/screenshots/07-reservasi-oleh-admin.png`
-- Kelola Studio: `docs/screenshots/08-kelola-studio.png`
+- Booking Studio: `docs/screenshots/06-booking.png.png`
+- Reservasi & Verifikasi oleh Admin: `docs/screenshots/07-reservasi-oleh-admin.png.png`
+- Kelola Studio: `docs/screenshots/08-kelola-studio.png.png`
 
-![Booking](docs/screenshots/06-booking.png)
-![Reservasi oleh Admin](docs/screenshots/07-reservasi-oleh-admin.png)
-![Kelola Studio](docs/screenshots/08-kelola-studio.png)
+![Booking](docs/screenshots/06-booking.png.png)
+![Reservasi oleh Admin](docs/screenshots/07-reservasi-oleh-admin.png.png)
+![Kelola Studio](docs/screenshots/08-kelola-studio.png.png)
 
 ### 6. REST API (Pengujian di Postman)
-- GET semua studio: `docs/screenshots/09-get-API.png`
-- POST tambah studio: `docs/screenshots/10-post-API.png`
-- PUT update studio: `docs/screenshots/11-put-API.png`
-- DELETE studio: `docs/screenshots/12-delete-API.png`
+- GET semua studio: `docs/screenshots/09-get-API.png.png`
+- POST tambah studio: `docs/screenshots/10-post-API.png.png`
+- PUT update studio: `docs/screenshots/11-put-API.png.png`
+- DELETE studio: `docs/screenshots/12-delete-API.png.png`
 
-![Postman GET](docs/screenshots/09-get-API.png)
-![Postman POST](docs/screenshots/10-post-API.png)
-![Postman PUT](docs/screenshots/11-put-API.png)
-![Postman DELETE](docs/screenshots/12-delete-API.png)
+![Postman GET](docs/screenshots/09-get-API.png.png)
+![Postman POST](docs/screenshots/10-post-API.png.png)
+![Postman PUT](docs/screenshots/11-put-API.png.png)
+![Postman DELETE](docs/screenshots/12-delete-API.png.png)
 
 ### 7. Tampilan Responsive (Mobile)
-`docs/screenshots/13-mobile.png`
+`docs/screenshots/13-mobile.png.png`
 
-![Responsive Mobile](docs/screenshots/13-mobile.png)
+![Responsive Mobile](docs/screenshots/13-mobile.png.png)
 
-### 8. Hasil Export PDF Struk Booking
-`docs/screenshots/14-export-pdf.png`
+### 8. Hasil Export PDF
+`docs/screenshots/14-export-pdf.png.png`
 
-![Export PDF](docs/screenshots/14-export-pdf.png)
+![Export PDF](docs/screenshots/14-export-pdf.png.png)
 
-> Catatan: struk PDF hanya bisa diunduh setelah status booking menjadi **"Selesai"** (pembayaran sudah diverifikasi Admin). Fitur export ini menghasilkan **PDF**; belum ada fitur export ke **Excel** pada versi kode saat ini.
+---
+
+## ⚠️ Known Issues / Catatan Pengembangan
+
+Beberapa hal berikut ditemukan saat meninjau kode dan perlu diperhatikan sebelum melakukan demo/dokumentasi, agar screenshot yang dilampirkan benar-benar mencerminkan fitur yang berjalan:
+
+1. **Login Google belum aktif** — package `laravel/socialite` sudah terpasang dan `GoogleController` sudah direferensikan di `routes/web.php`, namun file controller-nya, rute `/auth/google`, serta kredensial di `config/services.php` **belum diimplementasikan**. Perlu ditambahkan terlebih dahulu sebelum fitur ini bisa didemokan.
+2. **Export Excel** belum tersedia di kode (hanya export PDF struk booking).
+3. **Tidak ada screenshot terpisah** untuk: tampilan responsive desktop, pemisahan menu akses Admin vs User, dan percobaan akses ditolak — tambahkan file baru di `docs/screenshots/` dan referensinya di README bila diperlukan untuk dokumentasi.
 
 ---
 
@@ -261,7 +270,7 @@ app/Models/
 resources/views/
 ├── admin/                # View untuk role admin
 ├── user/                 # View untuk role user
-├── auth/                 # Login, register, verifikasi email
+├── auth/                 # Login, register
 └── receipt/pdf.blade.php # Template struk PDF
 ```
 
