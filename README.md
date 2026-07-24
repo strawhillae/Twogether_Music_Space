@@ -180,51 +180,53 @@ File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collec
 
 ## 📸 Dokumentasi Screenshot
 
-> Daftar di bawah sudah disesuaikan dengan nama file yang ada di `docs/screenshots/`. Jika Anda mengganti/menambah file, sesuaikan juga nama file & urutan di sini agar gambar tetap tampil dengan benar.
-
 ### 1. Landing Page
-`docs/screenshots/01-landing-page.png.png`
+-Tampilan Landing Page
 
 ![Landing Page](docs/screenshots/01-landing-page.png)
 
 ### 2. Login
-`docs/screenshots/02-login.png.png`
+- Tampilan Login
 
 ![Login](docs/screenshots/02-login.png)
 
 > ⚠️ **Catatan**: fitur Login Google — lihat bagian [Known Issues](#-known-issues--catatan-pengembangan).
 
 ### 3. Register
-`docs/screenshots/03-register.png.png`
+- Tampilan Register
 
 ![Register](docs/screenshots/03-register.png)
 
 ### 4. Dashboard
-- Dashboard Admin: `docs/screenshots/04-dashboard-admin.png.png`
-- Dashboard User: `docs/screenshots/05-dashboard-user.png.png`
-
+- Dashboard Admin
 ![Dashboard Admin](docs/screenshots/04-dashboard-admin.png)
+
+- Dashboard User: `docs/screenshots/05-dashboard-user.png.png`
 ![Dashboard User](docs/screenshots/05-dashboard-user.png)
 
-### 5. CRUD (Booking, Reservasi, Kelola Studio)
-- Booking Studio: `docs/screenshots/06-booking.png.png`
-- Reservasi & Verifikasi oleh Admin: `docs/screenshots/07-reservasi-oleh-admin.png.png`
-- Kelola Studio: `docs/screenshots/08-kelola-studio.png.png`
-
+### 5. CRUD (Create, Read, Update, Delete)
+- Booking Studio
 ![Booking](docs/screenshots/06-booking.png.png)
+
+- Reservasi & Verifikasi oleh Admin
 ![Reservasi oleh Admin](docs/screenshots/07-reservasi-oleh-admin.png.png)
+
+- Kelola Studio: `docs/screenshots/08-kelola-studio.png.png`
 ![Kelola Studio](docs/screenshots/08-kelola-studio.png.png)
 
 ### 6. REST API (Pengujian di Postman)
-- GET semua studio: `docs/screenshots/09-get-API.png.png`
-- POST tambah studio: `docs/screenshots/10-post-API.png.png`
-- PUT update studio: `docs/screenshots/11-put-API.png.png`
-- DELETE studio: `docs/screenshots/12-delete-API.png.png`
-
+- GET semua studio
 ![Postman GET](docs/screenshots/09-get-API.png.png)
+
+- POST tambah studio
 ![Postman POST](docs/screenshots/10-post-API.png.png)
+
+- PUT update studio
 ![Postman PUT](docs/screenshots/11-put-API.png.png)
+
+- DELETE studio: `docs/screenshots/12-delete-API.png.png`
 ![Postman DELETE](docs/screenshots/12-delete-API.png.png)
+
 
 ### 7. Tampilan Responsive (Mobile)
 `docs/screenshots/13-mobile.png.png`
@@ -235,16 +237,6 @@ File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collec
 `docs/screenshots/14-export-pdf.png.png`
 
 ![Export PDF](docs/screenshots/14-export-pdf.png.png)
-
----
-
-## ⚠️ Known Issues / Catatan Pengembangan
-
-Beberapa hal berikut ditemukan saat meninjau kode dan perlu diperhatikan sebelum melakukan demo/dokumentasi, agar screenshot yang dilampirkan benar-benar mencerminkan fitur yang berjalan:
-
-1. **Login Google belum aktif** — package `laravel/socialite` sudah terpasang dan `GoogleController` sudah direferensikan di `routes/web.php`, namun file controller-nya, rute `/auth/google`, serta kredensial di `config/services.php` **belum diimplementasikan**. Perlu ditambahkan terlebih dahulu sebelum fitur ini bisa didemokan.
-2. **Export Excel** belum tersedia di kode (hanya export PDF struk booking).
-3. **Tidak ada screenshot terpisah** untuk: tampilan responsive desktop, pemisahan menu akses Admin vs User, dan percobaan akses ditolak — tambahkan file baru di `docs/screenshots/` dan referensinya di README bila diperlukan untuk dokumentasi.
 
 ---
 
