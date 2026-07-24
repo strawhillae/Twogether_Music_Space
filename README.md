@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🎙️ Twogether Hub
 
 Twogether Hub adalah aplikasi web berbasis **Laravel 13** untuk manajemen **penyewaan (booking) studio** — mendukung studio bertipe *Recording* dan *Residence*. Aplikasi ini memiliki dua peran pengguna (**Admin** dan **User**), alur pemesanan lengkap (pilih studio → booking → pembayaran → verifikasi → struk), serta REST API sederhana untuk data studio.
@@ -93,11 +92,6 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
 ```
-
-> Jika menggunakan SQLite, buat dulu file database-nya (biasanya sudah ada di `database/database.sqlite`, jika belum ada jalankan):
-> ```bash
-> touch database/database.sqlite
-> ```
 
 ### 5. Migrasi & Seeder Database
 ```bash
@@ -278,6 +272,3 @@ resources/views/
 ```bash
 php artisan test
 ```
-=======
-
->>>>>>> c4d010a838cc5e09c9c62922a16cb7080faca75e
