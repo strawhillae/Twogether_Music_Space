@@ -5,7 +5,7 @@ Twogether Hub adalah aplikasi web berbasis **Laravel 13** untuk manajemen **peny
 ## ✨ Fitur Utama
 
 - **Autentikasi** — Register, Login, Logout, Reset/Konfirmasi Password (Laravel Breeze)
-- **Login Google (Socialite)** — Package `laravel/socialite` sudah terpasang (lihat catatan pada bagian *Known Issues*)
+- **Login Google (Socialite)** — Package `laravel/socialite` sudah terpasang
 - **Dashboard** berbeda untuk Admin dan User
 - **Manajemen Studio (CRUD)** — tambah, lihat, ubah, hapus data studio beserta foto
 - **Manajemen Fasilitas (CRUD)**
@@ -92,7 +92,6 @@ GOOGLE_CLIENT_SECRET=
 GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
 ```
 
-> Jika menggunakan SQLite, buat dulu file database-nya (biasanya sudah ada di `database/database.sqlite`, jika belum ada jalankan):
 > ```bash
 > touch database/database.sqlite
 > ```
@@ -129,7 +128,6 @@ php artisan serve
 ```
 Aplikasi dapat diakses melalui: `http://127.0.0.1:8000`
 
-Atau jalankan sekaligus server + queue + vite dengan satu perintah:
 ```bash
 composer run dev
 ```
@@ -172,10 +170,6 @@ Contoh body request `POST /api/studios`:
   "deskripsi": "Studio rekaman full peralatan",
   "status": "Tersedia"
 }
-```
-
-File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collection.json` (export koleksi Anda dari Postman lalu simpan di path tersebut agar terdokumentasi bersama repo).
-
 ---
 
 ## 📸 Dokumentasi Screenshot
@@ -183,14 +177,13 @@ File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collec
 ### 1. Landing Page
 -Tampilan Landing Page
 
-![Landing Page](docs/screenshots/01-landing-page.png)
+![Landing Page](docs/screenshots/01-landing-page.png.png)
 
 ### 2. Login
 - Tampilan Login
 
-![Login](docs/screenshots/02-login.png)
+![Login](docs/screenshots/02-login.png.png)
 
-> ⚠️ **Catatan**: fitur Login Google — lihat bagian [Known Issues](#-known-issues--catatan-pengembangan).
 
 ### 3. Register
 - Tampilan Register
@@ -199,10 +192,10 @@ File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collec
 
 ### 4. Dashboard
 - Dashboard Admin
-![Dashboard Admin](docs/screenshots/04-dashboard-admin.png)
+![Dashboard Admin](docs/screenshots/04-dashboard-admin.png.png)
 
-- Dashboard User: `docs/screenshots/05-dashboard-user.png.png`
-![Dashboard User](docs/screenshots/05-dashboard-user.png)
+- Dashboard User
+![Dashboard User](docs/screenshots/05-dashboard-user.png.png)
 
 ### 5. CRUD (Create, Read, Update, Delete)
 - Booking Studio
@@ -211,7 +204,7 @@ File koleksi Postman dapat disimpan di `docs/postman/TwogetherHub.postman_collec
 - Reservasi & Verifikasi oleh Admin
 ![Reservasi oleh Admin](docs/screenshots/07-reservasi-oleh-admin.png.png)
 
-- Kelola Studio: `docs/screenshots/08-kelola-studio.png.png`
+- Kelola Studio
 ![Kelola Studio](docs/screenshots/08-kelola-studio.png.png)
 
 ### 6. REST API (Pengujian di Postman)
